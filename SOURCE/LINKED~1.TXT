@@ -1,0 +1,85 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream.h>
+using namespace std;
+
+int linked_array[1000];
+
+class Node
+{
+    public:
+         int* Address;
+         int* NextValue;
+         int value;
+         void LinkNode(int* li)
+         {
+             NextValue=li;
+         }
+           NewNode(int* p)
+         {
+             Address=p;
+             value=*p;
+         }
+        /* void LinkNode(Node* p)
+         {
+             NextValue=p;
+         }*/
+};
+       
+class LinkedList
+{
+    private: 
+          Node *current_pointer;
+          Node *head;
+          Node *end_pointer;
+          int length;
+          Node* TransverseAssign()
+          {
+              Node *ptr1;
+              Node *ptr2;
+              ptr1=head;
+              ptr2=head;
+              while (ptr1!=NULL)
+              {
+                  ptr2=ptr1;
+                  ptr1->Address=ptr1->NextValue;
+              }
+              return ptr2;
+          }
+          
+    public:
+           LinkedList()
+           {
+               length=1;
+           }
+           LinkedList(Node a)
+           {
+               length=1;
+               current_pointer=&a;
+           }
+           void AddValue(Node *p)
+          {
+              length++;
+             end_pointer->LinkNode(p->Address);
+             end_pointer=p;
+             p->NextValue=NULL;
+          }
+           void DeleteValue()
+           {
+               end_pointer=NULL;
+               end_pointer=TransverseAssign();
+           }
+//    }
+    
+};
+
+
+
+
+
